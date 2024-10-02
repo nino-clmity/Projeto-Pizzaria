@@ -77,6 +77,7 @@ public void preencherTabela() {
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         LImparAd = new javax.swing.JButton();
+        txtQntd1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,44 +85,54 @@ public void preencherTabela() {
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 204));
         jLabel5.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel5.setForeground(new java.awt.Color(255, 204, 102));
         jLabel5.setText("Validade:");
 
-        txtNome.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        txtNome.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
 
-        txtVal.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        txtVal.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
+        txtVal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtValActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel3.setForeground(new java.awt.Color(255, 204, 102));
         jLabel3.setText("Categoria:");
 
         jLabel7.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel7.setForeground(new java.awt.Color(255, 204, 102));
         jLabel7.setText("Data acesso:");
 
-        txtCat.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        txtCat.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel4.setForeground(new java.awt.Color(255, 204, 102));
         jLabel4.setText("Quantidade:");
 
         jButton1.setBackground(new java.awt.Color(153, 255, 153));
         jButton1.setText("Cadastrar");
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel1.setForeground(new java.awt.Color(255, 204, 102));
         jLabel1.setText("Código :");
 
-        txtCod.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        txtCod.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
 
-        txtQntd.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        txtQntd.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel2.setForeground(new java.awt.Color(255, 204, 102));
         jLabel2.setText("Nome:");
 
         jLabel6.setFont(new java.awt.Font("Garet Book", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel6.setForeground(new java.awt.Color(255, 204, 102));
         jLabel6.setText("Adicionar");
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pizzaicon.png"))); // NOI18N
@@ -134,46 +145,40 @@ public void preencherTabela() {
             }
         });
 
+        txtQntd1.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(LImparAd))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(107, 107, 107)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel7)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)))
-                        .addGap(35, 35, 35)
+                        .addGap(64, 64, 64)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                             .addComponent(txtVal)
-                            .addComponent(txtNome)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtQntd1)
+                            .addComponent(txtQntd)
+                            .addComponent(txtCod)
+                            .addComponent(txtCat)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(146, 146, 146)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel2))
-                                    .addGap(35, 35, 35))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(LImparAd)
-                                        .addComponent(jLabel4))
-                                    .addGap(18, 18, 18)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtQntd, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                                .addComponent(txtCat, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtCod)))))
+                        .addGap(20, 20, 20)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 115, Short.MAX_VALUE)
@@ -189,11 +194,11 @@ public void preencherTabela() {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -201,9 +206,11 @@ public void preencherTabela() {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtQntd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(17, 17, 17)
-                .addComponent(jLabel3)
-                .addGap(24, 24, 24)
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtQntd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
@@ -237,6 +244,14 @@ public void preencherTabela() {
     private void LImparAdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LImparAdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LImparAdActionPerformed
+
+    private void txtValActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,6 +304,7 @@ public void preencherTabela() {
     private javax.swing.JTextField txtCod;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtQntd;
+    private javax.swing.JTextField txtQntd1;
     private javax.swing.JTextField txtVal;
     // End of variables declaration//GEN-END:variables
 }
