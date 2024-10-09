@@ -92,7 +92,7 @@ public class login extends javax.swing.JFrame {
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         try{
-            String pesquisa = "select * from `usuario` where usuario like '" + txt_usu.getText() + "'&& senha='" + txt_senha.getText() + "'";
+            String pesquisa = "select * from `funcionario` where email_Fun like '" + txt_usu.getText() + "'&& senha='" + txt_senha.getText() + "'";
             con_cliente.executaSQL(pesquisa);
             
             if(con_cliente.resultset.first()){
@@ -101,8 +101,6 @@ public class login extends javax.swing.JFrame {
                 dispose();
             }else{
                 JOptionPane.showMessageDialog(null, "\n Usuário não cadastrado!!","Mensagem do Programa",JOptionPane.INFORMATION_MESSAGE);
-                con_cliente.desconecta();
-                System.exit(0);
             }
         }
         catch(SQLException errosql){

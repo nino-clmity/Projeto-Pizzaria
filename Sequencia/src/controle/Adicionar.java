@@ -15,11 +15,9 @@ conexao con_cliente;
         }
             public void mostrar_Dados() {
             try {
-                txtNome.setText(con_cliente.resultset.getString("nome_Produto"));
-                txtQntd.setText(con_cliente.resultset.getString("quantidade"));
-                txtCat.setText(con_cliente.resultset.getString("categoria"));
-                txtVal.setText(con_cliente.resultset.getString("validade"));
-                txtDataA.setText(con_cliente.resultset.getString("data_Acesso"));
+                txtFun.setText(con_cliente.resultset.getString("id_Fun"));
+                txtFor.setText(con_cliente.resultset.getString("id_For"));
+                txtCat.setText(con_cliente.resultset.getString("id_Cat"));
             }catch(SQLException erro){
                 JOptionPane.showMessageDialog(null,"Não localizou dados: "+erro,"Mensagem do Programa",JOptionPane.INFORMATION_MESSAGE);
             }
@@ -32,12 +30,10 @@ conexao con_cliente;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox2 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         txtDataA = new javax.swing.JTextField();
         txtVal = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -47,13 +43,14 @@ conexao con_cliente;
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         LImparAd = new javax.swing.JButton();
-        txtCat = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtVal1 = new javax.swing.JTextField();
+        txtFun = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtDataA1 = new javax.swing.JTextField();
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        txtFor = new javax.swing.JTextField();
+        registroAnterior = new javax.swing.JButton();
+        registroProximo = new javax.swing.JButton();
+        txtCat = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,10 +74,6 @@ conexao con_cliente;
                 txtValActionPerformed(evt);
             }
         });
-
-        jLabel3.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 204));
-        jLabel3.setText("Categoria:");
 
         jLabel7.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 204));
@@ -130,6 +123,43 @@ conexao con_cliente;
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel9.setText("id fornecedor:");
+
+        txtFun.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        txtFun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFunActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel10.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel10.setText("id funcionário:");
+
+        txtFor.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        txtFor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtForActionPerformed(evt);
+            }
+        });
+
+        registroAnterior.setText("Anterior");
+        registroAnterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registroAnteriorActionPerformed(evt);
+            }
+        });
+
+        registroProximo.setText("Próximo");
+        registroProximo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registroProximoActionPerformed(evt);
+            }
+        });
+
         txtCat.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtCat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,69 +167,26 @@ conexao con_cliente;
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 204));
-        jLabel9.setText("id fornecedor:");
-
-        txtVal1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        txtVal1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtVal1ActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel10.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 204));
-        jLabel10.setText("id funcinário:");
-
-        txtDataA1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        txtDataA1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataA1ActionPerformed(evt);
-            }
-        });
+        jLabel11.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel11.setText("id categoria:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDataA)
-                    .addComponent(txtVal))
-                .addGap(1, 1, 1))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtVal1)
-                    .addComponent(txtDataA1))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtCat, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel2))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                                    .addComponent(txtQntd)))))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                            .addComponent(txtQntd)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(226, 226, 226)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,11 +196,43 @@ conexao con_cliente;
                                 .addGap(155, 155, 155)))))
                 .addGap(117, 117, 117))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(registroAnterior)
+                        .addGap(30, 30, 30)
+                        .addComponent(registroProximo)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel5))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtDataA)
+                            .addComponent(txtVal))
+                        .addGap(1, 1, 1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtFun)
+                            .addComponent(txtFor))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCat))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,11 +249,7 @@ conexao con_cliente;
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtQntd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(77, 77, 77)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
@@ -244,13 +259,21 @@ conexao con_cliente;
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtVal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDataA1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registroProximo)
+                    .addComponent(registroAnterior))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(LImparAd))
@@ -261,9 +284,7 @@ conexao con_cliente;
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,13 +294,9 @@ conexao con_cliente;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtVal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVal1ActionPerformed
+    private void txtFunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFunActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtVal1ActionPerformed
-
-    private void txtCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCatActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCatActionPerformed
+    }//GEN-LAST:event_txtFunActionPerformed
 
     private void LImparAdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LImparAdActionPerformed
         // TODO add your handling code here:
@@ -294,13 +311,15 @@ conexao con_cliente;
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String idfun = txtFun.getText();
+        String idfor = txtFor.getText();
+        String idcat = txtCat.getText();        
         String nome = txtNome.getText();
         String quantidade = txtQntd.getText();
-        String categoria = txtCat.getText();
         String validade = txtVal.getText();
         String dataAcesso = txtDataA.getText();
         try {
-            String insert_sql = "insert into `produto`(`nome_Produto`,`quantidade`,`categoria`,`validade`,`data_Acesso`) values ('" + nome + "','" + quantidade + "','" + categoria + "','" + validade + "','" + dataAcesso + "')";
+            String insert_sql = "insert into `produto`(`id_Fun`,`id_Cat`,`id_For`,`nome_Produto`,`quantidade`,`validade`,`data_Acesso`) values ('" + idfun + "', '" + idcat + "','" + idfor + "','" + nome + "','" + quantidade + "','" + validade + "','" + dataAcesso + "')";
             con_cliente.statement.executeUpdate(insert_sql);
  
             JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso!!","Mensagem do Programa",JOptionPane.INFORMATION_MESSAGE);
@@ -319,9 +338,31 @@ conexao con_cliente;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataAActionPerformed
 
-    private void txtDataA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataA1ActionPerformed
+    private void txtForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtForActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataA1ActionPerformed
+    }//GEN-LAST:event_txtForActionPerformed
+
+    private void registroAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registroAnteriorActionPerformed
+        try {
+            con_cliente.resultset.previous();
+            mostrar_Dados();
+        }catch(SQLException erro){
+            JOptionPane.showMessageDialog(null, "Não foi possível acessar o registro anterior: "+erro,"Mensagem do Programa",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_registroAnteriorActionPerformed
+
+    private void registroProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registroProximoActionPerformed
+        try {
+            con_cliente.resultset.next();
+            mostrar_Dados();
+        }catch(SQLException erro){
+            JOptionPane.showMessageDialog(null, "Não foi possível acessar o próximo registro: "+erro,"Mensagem do Programa",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_registroProximoActionPerformed
+
+    private void txtCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -361,10 +402,9 @@ conexao con_cliente;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LImparAd;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -372,12 +412,14 @@ conexao con_cliente;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton registroAnterior;
+    private javax.swing.JButton registroProximo;
     private javax.swing.JTextField txtCat;
     private javax.swing.JTextField txtDataA;
-    private javax.swing.JTextField txtDataA1;
+    private javax.swing.JTextField txtFor;
+    private javax.swing.JTextField txtFun;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtQntd;
     private javax.swing.JTextField txtVal;
-    private javax.swing.JTextField txtVal1;
     // End of variables declaration//GEN-END:variables
 }
